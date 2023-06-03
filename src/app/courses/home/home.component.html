@@ -1,0 +1,161 @@
+<div class="container">
+    <h3>All Courses</h3>
+    <mat-tab-group>
+      <ng-container *ngIf="(beginnerCourses$ | async) as beginnerCourses">
+        <mat-tab label="Beginners" *ngIf="beginnerCourses?.length > 0">
+          <courses-card-list (courseEdited)="reloadCourses()"
+                             [courses]="beginnerCourses">
+          </courses-card-list>
+        </mat-tab>
+      </ng-container>
+      <!-- <ng-container  *ngIf="(intermediateCourses$ | async) as intermediateCourses">
+        <mat-tab label="Intermediate" *ngIf="intermediateCourses?.length > 0">
+          <courses-card-list (courseEdited)="reloadCourses()"
+                             [courses]="intermediateCourses">
+          </courses-card-list>
+        </mat-tab>
+      </ng-container> -->
+      <ng-container  *ngIf="(advancedCourses$ | async) as advancedCourses">
+        <mat-tab label="Advanced" *ngIf="advancedCourses?.length > 0">
+          <courses-card-list (courseEdited)="reloadCourses()"
+                             [courses]="advancedCourses">
+          </courses-card-list>
+        </mat-tab>
+      </ng-container>
+    </mat-tab-group>
+</div>
+
+
+<!-- <mat-tab-group _ngcontent-gxs-c162="" class="mat-mdc-tab-group mat-primary mat-mdc-tab-group-stretch-tabs">
+  <mat-tab-header class="mat-mdc-tab-header" ng-reflect-selected-index="1" ng-reflect-disable-ripple="false">
+    <button aria-hidden="true" type="button" mat-ripple="" tabindex="-1" class="mat-ripple mat-mdc-tab-header-pagination mat-mdc-tab-header-pagination-before mat-mdc-tab-header-pagination-disabled" ng-reflect-disabled="true" disabled="">
+      <div class="mat-mdc-tab-header-pagination-chevron"></div>
+    </button>
+    <div class="mat-mdc-tab-label-container">
+      <div role="tablist" class="mat-mdc-tab-list" style="transform: translateX(0px);">
+        <div class="mat-mdc-tab-labels">
+          <div role="tab" mattablabelwrapper="" cdkmonitorelementfocus="" class="mdc-tab mat-mdc-tab mat-mdc-focus-indicator ng-star-inserted" id="mat-tab-label-0-0" ng-reflect-disabled="false" ng-reflect-fit-ink-bar-to-content="false" tabindex="-1" aria-posinset="1" aria-setsize="2" aria-controls="mat-tab-content-0-0" aria-selected="false" aria-disabled="false">
+            <span class="mdc-tab__ripple"></span>
+            <div mat-ripple="" class="mat-ripple mat-mdc-tab-ripple" ng-reflect-trigger="[object HTMLDivElement]" ng-reflect-disabled="false"></div>
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__text-label">Beginners
+
+              </span>
+            </span>
+            <span class="mdc-tab-indicator">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+            </span>
+          </div>
+          <div role="tab" mattablabelwrapper="" cdkmonitorelementfocus="" class="mdc-tab mat-mdc-tab mat-mdc-focus-indicator ng-star-inserted mdc-tab--active mdc-tab-indicator--active" id="mat-tab-label-0-1" ng-reflect-disabled="false" ng-reflect-fit-ink-bar-to-content="false" tabindex="0" aria-posinset="2" aria-setsize="2" aria-controls="mat-tab-content-0-1" aria-selected="true" aria-disabled="false">
+            <span class="mdc-tab__ripple"></span>
+            <div mat-ripple="" class="mat-ripple mat-mdc-tab-ripple" ng-reflect-trigger="[object HTMLDivElement]" ng-reflect-disabled="false"></div>
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__text-label">Advanced
+              </span>
+            </span>
+            <span class="mdc-tab-indicator">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button aria-hidden="true" type="button" mat-ripple="" tabindex="-1" class="mat-ripple mat-mdc-tab-header-pagination mat-mdc-tab-header-pagination-after mat-mdc-tab-header-pagination-disabled" ng-reflect-disabled="true" disabled="">
+      <div class="mat-mdc-tab-header-pagination-chevron"></div>
+    </button>
+  </mat-tab-header>
+  <div class="mat-mdc-tab-body-wrapper" style="">
+    <mat-tab-body role="tabpanel" class="mat-mdc-tab-body ng-tns-c41-0 ng-star-inserted" id="mat-tab-content-0-0" ng-reflect-_content="[object Object]" ng-reflect-position="-1" ng-reflect-origin="1" ng-reflect-animation-duration="500ms" ng-reflect-preserve-content="false" aria-labelledby="mat-tab-label-0-0">
+      <div cdkscrollable="" class="mat-mdc-tab-body-content ng-tns-c41-0 ng-trigger ng-trigger-translateTab" style="transform: translate3d(-100%, 0px, 0px); min-height: 1px; visibility: hidden;">
+      </div>
+    </mat-tab-body>
+    <mat-tab-body role="tabpanel" class="mat-mdc-tab-body ng-tns-c41-1 ng-star-inserted mat-mdc-tab-body-active" id="mat-tab-content-0-1" ng-reflect-_content="[object Object]" ng-reflect-position="0" ng-reflect-animation-duration="500ms" ng-reflect-preserve-content="false" aria-labelledby="mat-tab-label-0-1" ng-reflect-origin="1">
+      <div cdkscrollable="" class="mat-mdc-tab-body-content ng-tns-c41-1 ng-trigger ng-trigger-translateTab" style="transform: none;">
+        <courses-card-list _ngcontent-gxs-c162="" _nghost-gxs-c161="" ng-reflect-courses="[object Object],[object Object" class="ng-star-inserted">
+          <mat-card _ngcontent-gxs-c161="" class="mat-mdc-card mdc-card course-card mat-elevation-z10 ng-star-inserted">
+            <mat-card-header _ngcontent-gxs-c161="" class="mat-mdc-card-header">
+              <div class="mat-mdc-card-header-text">
+                <mat-card-title _ngcontent-gxs-c161="" class="mat-mdc-card-title">Angular Security Course</mat-card-title>
+              </div>
+            </mat-card-header>
+            <img _ngcontent-gxs-c161="" mat-card-image="" class="mat-mdc-card-image mdc-card__media" src="https://s3-us-west-1.amazonaws.com/angular-university/course-images/security-cover-small-v2.png">
+            <mat-card-content _ngcontent-gxs-c161="" class="mat-mdc-card-content">
+              <p _ngcontent-gxs-c161="">Learn Web Security Fundamentals and apply them to defend an Angular / Node Application from multiple types of attacks.</p>
+            </mat-card-content>
+            <mat-card-actions _ngcontent-gxs-c161="" class="mat-mdc-card-actions mdc-card__actions course-actions">
+              <button _ngcontent-gxs-c161="" mat-raised-button="" color="primary" class="mdc-button mdc-button--raised mat-mdc-raised-button mat-primary mat-mdc-button-base" ng-reflect-color="primary" tabindex="0" ng-reflect-router-link="/courses,6">
+                <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                <span class="mdc-button__label"> VIEW COURSE </span>
+                <span class="mat-mdc-focus-indicator"></span>
+                <span matripple="" class="mat-ripple mat-mdc-button-ripple" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></span>
+                <span class="mat-mdc-button-touch-target"></span>
+              </button>
+              <button _ngcontent-gxs-c161="" mat-raised-button="" color="accent" class="mdc-button mdc-button--raised mat-mdc-raised-button mat-accent mat-mdc-button-base" ng-reflect-color="accent">
+                <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                <span class="mdc-button__label"> EDIT </span>
+                <span class="mat-mdc-focus-indicator"></span>
+                <span matripple="" class="mat-ripple mat-mdc-button-ripple" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></span>
+                <span class="mat-mdc-button-touch-target"></span>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card _ngcontent-gxs-c161="" class="mat-mdc-card mdc-card course-card mat-elevation-z10 ng-star-inserted">
+            <mat-card-header _ngcontent-gxs-c161="" class="mat-mdc-card-header">
+              <div class="mat-mdc-card-header-text">
+                <mat-card-title _ngcontent-gxs-c161="" class="mat-mdc-card-title">Angular PWA - Progressive Web Apps Course</mat-card-title>
+              </div>
+            </mat-card-header>
+            <img _ngcontent-gxs-c161="" mat-card-image="" class="mat-mdc-card-image mdc-card__media" src="https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png">
+            <mat-card-content _ngcontent-gxs-c161="" class="mat-mdc-card-content">
+              <p _ngcontent-gxs-c161="">Learn Angular Progressive Web Applications, build the future of the Web Today.</p>
+            </mat-card-content>
+            <mat-card-actions _ngcontent-gxs-c161="" class="mat-mdc-card-actions mdc-card__actions course-actions">
+              <button _ngcontent-gxs-c161="" mat-raised-button="" color="primary" class="mdc-button mdc-button--raised mat-mdc-raised-button mat-primary mat-mdc-button-base" ng-reflect-color="primary" tabindex="0" ng-reflect-router-link="/courses,7">
+                <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                <span class="mdc-button__label"> VIEW COURSE </span>
+                <span class="mat-mdc-focus-indicator"></span>
+                <span matripple="" class="mat-ripple mat-mdc-button-ripple" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></span>
+                <span class="mat-mdc-button-touch-target"></span>
+              </button>
+              <button _ngcontent-gxs-c161="" mat-raised-button="" color="accent" class="mdc-button mdc-button--raised mat-mdc-raised-button mat-accent mat-mdc-button-base" ng-reflect-color="accent">
+                <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                <span class="mdc-button__label"> EDIT </span>
+                <span class="mat-mdc-focus-indicator"></span>
+                <span matripple="" class="mat-ripple mat-mdc-button-ripple" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></span>
+                <span class="mat-mdc-button-touch-target"></span>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card _ngcontent-gxs-c161="" class="mat-mdc-card mdc-card course-card mat-elevation-z10 ng-star-inserted">
+            <mat-card-header _ngcontent-gxs-c161="" class="mat-mdc-card-header">
+              <div class="mat-mdc-card-header-text">
+                <mat-card-title _ngcontent-gxs-c161="" class="mat-mdc-card-title">Angular Advanced Library Laboratory: Build Your Own Library</mat-card-title>
+              </div>
+            </mat-card-header>
+            <img _ngcontent-gxs-c161="" mat-card-image="" class="mat-mdc-card-image mdc-card__media" src="https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png">
+            <mat-card-content _ngcontent-gxs-c161="" class="mat-mdc-card-content">
+              <p _ngcontent-gxs-c161="">Learn Advanced Angular functionality typically used in Library Development. Advanced Components, Directives, Testing, Npm</p>
+            </mat-card-content>
+            <mat-card-actions _ngcontent-gxs-c161="" class="mat-mdc-card-actions mdc-card__actions course-actions">
+              <button _ngcontent-gxs-c161="" mat-raised-button="" color="primary" class="mdc-button mdc-button--raised mat-mdc-raised-button mat-primary mat-mdc-button-base" ng-reflect-color="primary" tabindex="0" ng-reflect-router-link="/courses,8">
+                <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                <span class="mdc-button__label"> VIEW COURSE </span>
+                <span class="mat-mdc-focus-indicator"></span>
+                <span matripple="" class="mat-ripple mat-mdc-button-ripple" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></span>
+                <span class="mat-mdc-button-touch-target"></span>
+              </button>
+              <button _ngcontent-gxs-c161="" mat-raised-button="" color="accent" class="mdc-button mdc-button--raised mat-mdc-raised-button mat-accent mat-mdc-button-base" ng-reflect-color="accent">
+                <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                <span class="mdc-button__label"> EDIT </span>
+                <span class="mat-mdc-focus-indicator"></span>
+                <span matripple="" class="mat-ripple mat-mdc-button-ripple" ng-reflect-disabled="false" ng-reflect-trigger="[object HTMLButtonElement]"></span>
+                <span class="mat-mdc-button-touch-target"></span>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </courses-card-list>
+      </div>
+    </mat-tab-body>
+  </div>
+</mat-tab-group> -->
+
