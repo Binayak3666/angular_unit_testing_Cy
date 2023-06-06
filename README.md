@@ -146,4 +146,20 @@ If you are looking for the Complete Typescript 2 Course - Build a REST API, the 
 [Github repo for this course](https://github.com/angular-university/complete-typescript-course)
 
 ![Complete Typescript Course](https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png)
+C:\Users\Raja>ng version
 
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
+Angular CLI: 15.2.6
+Node: 18.12.1
+Package Manager: npm 8.19.2
+OS: win32 x64
+
+Angular:
+...
